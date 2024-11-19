@@ -13,3 +13,5 @@ export { default as Switch } from './switch';
 export { default as Tab } from './tab';
 export { default as TextField } from './textField';
 export { default as Typography } from './typography';
+export { default as DatePicker } from './datePicker';
+export { default as DateTimePicker } from './dateTimePicker';

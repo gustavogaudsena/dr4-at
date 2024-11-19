@@ -1,5 +1,5 @@
 import React from "react"
-import { Alert, Avatar, Box, Button, Card, Checkbox, Container, Fab, Grid, IconButton, Snackbar, Switch, Tab, TextField, Typography, } from "../../components";
+import { Alert, Avatar, Box, Button, Card, Checkbox, Container, DatePicker, DateTimePicker, Fab, Grid, IconButton, Snackbar, Switch, Tab, TextField, Typography, } from "../../components";
 import { CardContent, FormControlLabel, Tabs } from "@mui/material";
 import { GrAppleAppStore } from "react-icons/gr";
 
@@ -41,6 +41,10 @@ const SignIn: React.FC = () => {
 
                 <Fab color="primary"><IconButton color="warning"><GrAppleAppStore /></IconButton></Fab>
                 <Fab color="primary"><IconButton color="warning"><GrAppleAppStore /></IconButton></Fab>
+                <Grid size={12} alignItems="center">
+                    <DatePicker />
+                    <DateTimePicker />
+                </Grid>
                 <Grid size={12} alignItems="center">
                     <Button variant="contained" onClick={toggleSnackbar} fullWidth >SignIn</Button>
                 </Grid>
