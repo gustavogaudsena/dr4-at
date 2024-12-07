@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+:root {
+    --light-blue: #2a869c;
+    --light-blue-op: #2a869c4d;
+    --deep-blue: #0E59AC;
+    --deep-blue-op: #0E59AC4d;
+    --orange: #FD9B63;
+    --orange-op: #FD9B634d;
+    --wine: #B12F1F;
+    --wine-op: #b12f1f4d;
+    --purple: #5D3E9F;
+    --purple-op: #5D3E9F4d;
+    --white: #F1F1F1;
+    --white-op: #F1F1F14d;
+    --black: #2a2a2a;
+    --black-op: #2a2a2a4d;
+    --dark-gray: #5A5555;
+    --dark-gray-op: #5A55554d;
+    --gray: #EDEBEB;
+    --gray-op: #EDEBEB4d;
+    --danger: #730d0d;
+    --danger-op: #730d0d4d;
+
+
+    --bg-color: var(--white);
+    --text-color: var(--black);
+    --primary: var(--wine);
+    --primary-op: var(--wine-op);
+    --secondary: var(--light-blue);
+    --secondary-op: var(--light-blue-op);
+
+    font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color: var(--text-color);
+}
+
+html {
+    background-color: var(--primary-op);
+}
+
+html [data-theme=light] {
+    background-color: var(--primary-op);
+}
+
+html [data-theme=dark] {
+    background-color: var(--primary-op);
+}
+
+.app-background {
+    position: relative;
+}
+
+button {
+    border: none;
+    background-color: none;
+
+}
+
+
+.general-textfield>div,
+.general-button {
+    border-radius: 10px !important;
+}
+
+.general-button:not(.MuiButton-outlined, .MuiButton-textError) {
+    background-color: var(--secondary) !important;
+    color: var(--gray) !important;
+}
+
+.general-button,
+.general-button button {
+    border-color: var(--secondary) !important;
+    color: var(--secondary) !important;
+}
+
+.general-button.MuiButton-textError {
+    color: var(--primary) !important;
+}
+
+.general-app-bar {
+    background-color: var(--secondary) !important;
+}
+
+a {
+    color: var(--secondary);
+}
+
+a:hover {
+    color: var(--secondary-op);
+}
