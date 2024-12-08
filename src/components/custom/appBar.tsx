@@ -22,7 +22,7 @@ const AppBarComponent: React.FC<IAppBarProps> = ({ title, firstIcon, secondIcon,
         <AppBar position="static" {...props} className="general-app-bar">
             <Toolbar variant="dense"  >
                 <Grid container justifyContent={'space-between'} width={'100%'} gap={2} wrap="nowrap">
-                    {!firstIcon && <></>}
+                    {!firstIcon && <div></div>}
                     {firstIcon &&
                         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }} onClick={firstIcon.handleClick}>
                             {firstIcon.icon}
@@ -37,66 +37,10 @@ const AppBarComponent: React.FC<IAppBarProps> = ({ title, firstIcon, secondIcon,
                             {secondIcon.icon}
                         </IconButton>
                     }
-                    {!secondIcon && <></>}
+                    {!secondIcon && <div></div>}
                 </Grid>
             </Toolbar>
         </AppBar>)
 }
 
 export default AppBarComponent;
-
-
-// const AppBarComponent = ({ ...props }) => {
-//     const navigate = useNavigate();
-
-//     return <AppBar position="static">
-//         <Toolbar>
-//             <IconButton
-//                 size="large"
-//                 edge="start"
-//                 color="inherit"
-//                 aria-label="menu"
-//                 sx={{
-//                     position: 'relative',
-//                     zIndex: '2'
-//                 }}
-//                 onClick={() => navigate("/")}
-//             >
-//                 <ArrowBackIcon />
-//             </IconButton>
-//             <Typography variant="h6" component="div" sx={{
-//                 flexGrow: 1,
-//                 textAlign: 'center',
-//                 position: 'absolute',
-//                 left: '0',
-//                 width: '100%',
-//                 zIndex: '1'
-//             }}>
-//                 {props.title}
-//             </Typography>
-//             {
-//                 props.id ? <Box sx={{
-//                     display: { xs: 'flex', md: 'none' },
-//                     position: 'absolute',
-//                     right: '1.5em'
-//                 }}>
-//                     <IconButton
-//                         size="large"
-//                         edge="end"
-//                         color="inherit"
-//                         aria-label="menu"
-//                         sx={{
-//                             position: 'relative',
-//                             zIndex: '2'
-//                         }}
-//                         onClick={props._delete}
-//                     >
-//                         <DeleteIcon />
-//                     </IconButton>
-//                 </Box> : null
-//             }
-//         </Toolbar>
-//     </AppBar>
-// }
-
-// export default AppBarComponent;

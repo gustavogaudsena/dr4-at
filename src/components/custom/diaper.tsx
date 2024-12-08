@@ -14,10 +14,6 @@ interface IDiaper {
 const Diaper: React.FC<IDiaper> = ({ data, setData }) => {
     const { translate } = useAppContext()
 
-    useEffect(() => {
-        console.log(data)
-
-    }, [])
     return <Grid container={true} spacing={2}>
         <Grid container size={{ xs: 12 }} justifyContent={'center'} alignItems={'center'}>
             <Grid >

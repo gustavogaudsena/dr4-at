@@ -26,7 +26,6 @@ const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env
 const user = getUser();
 
 const update: UpdateInterface = async (table, data, id) => {
-    console.log(table, data, id)
     if (id) {
         data.id = id;
     }

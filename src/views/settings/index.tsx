@@ -9,14 +9,14 @@ import authenticator from "../../services/authenticator";
 import { get, save } from "../../services/supabasedb";
 
 const Settings: React.FC = () => {
-    const { translate, changeLanguage, SUPABASE } = useAppContext()
+    const { translate, changeLanguage, showAlertMessage } = useAppContext()
     const navigate = useNavigate()
     const user = getUser();
-    const [data, setData] = useState<any>({});
+    const [data, setData] = useState<any>({name: '', height: 0, weight: 0});
 
     const loadData = async () => {
-        const result = await get("baby_list", [{ field: "user_id", value: user.id }]);
-        setData(result);
+        const result = await get("baby", [{ field: "user_id", value: user.id }]);
+        if (result) setData(result);
     }
 
     useEffect(() => {
@@ -33,7 +33,9 @@ const Settings: React.FC = () => {
 
     const handleSave = async () => {
         data.user_id = user.id;
-         save('list_items', data);
+        save('baby', data);
+        showAlertMessage({ message: `Campos atualizados com sucesso`, severity: "success" });
+        
     }
 
     return (
@@ -46,26 +48,27 @@ const Settings: React.FC = () => {
                         label={translate("name")}
                         fullWidth={true}
                         onChange={(event) => handleInputChange("name", event.target.value, data, setData)}
-                        value={data.name ? data.name : null}
+                        value={data?.name}
                     />
                 </Grid>
                 <Grid
                     size={{ xs: 12 }}>
                     <TextField
-                        label={translate("height")}
+                        label={translate("height") + ' cm'}
+                        type="number"
                         fullWidth={true}
                         onChange={(event) => handleInputChange("height", event.target.value, data, setData)}
-                        value={data.height}
+                        value={data?.height}
                     />
                 </Grid >
                 <Grid
                     size={{ xs: 12 }}>
                     <TextField
-                        label={translate("weight")}
-                        placeholder={translate("weight")}
+                        label={translate("weight") + ' kg'}
+                        type="number"
                         fullWidth={true}
                         onChange={(event) => handleInputChange("weight", event.target.value, data, setData)}
-                        value={data.weight}
+                        value={data?.weight}
                     />
                 </Grid>
                 <Grid

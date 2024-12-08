@@ -62,9 +62,9 @@ const SignUp: React.FC = () => {
         }
         let { error } = await authenticator.signUp(data.email.value, data.password.value, SUPABASE);
         if (error?.message) {
-            showAlertMessage({ message: translate(translate("registerError")), severity: 'error' });
+            showAlertMessage({ message: translate("registerError"), severity: 'error' });
         } else if (!error) {
-            showAlertMessage({ message: translate(translate("Usuário cadastrado com sucesso!")), severity: 'success' });
+            showAlertMessage({ message: translate("registerSuccess"), severity: 'success' });
             navigate('/signin')
         }
     }

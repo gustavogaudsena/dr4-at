@@ -41,5 +41,17 @@
     "both": "Ambos",
     "type": "Tipo",
     "side": "Lado",
-    "observation": "Observação"
+    "observation": "Observação",
+    "editedField": "Item editado com sucesso!",
+    "createdField": "Item criado com sucesso!",
+    "editedFieldError": "Ocorreu um erro ao editar item",
+    "createdFieldError": "Ocorreu um erro ao criar item",
+    "theBaby": "O bebê",
+    "sleepDashboard": "dormiu",
+    "eatDashboard": "comeu",
+    "diaperDashboard": "usou",
+    "times": "vezes",
+    "diapers": "fraldas",
+    "bottle": "mamadeira",
+    "breast": "seio"
 }

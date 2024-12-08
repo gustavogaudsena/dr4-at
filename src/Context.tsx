@@ -18,7 +18,7 @@ interface AppContextInterface {
     translate: (text: string) => string
 }
 
-const AppContext = createContext<AppContextInterface | null>(null)
+const AppContext = createContext<AppContextInterface | null >(null)
 
 const SUPABASE = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY)
 
@@ -43,7 +43,7 @@ const AppProvider: React.FC<AppProviderInterface> = ({ children }) => {
         setSnackOpen(false);
     }
 
-    const showAlertMessage: ShowAlertMessageInterface = ({ message, severity = 'info', variant = 'filled', timeout = 35000 }) => {
+    const showAlertMessage: ShowAlertMessageInterface = ({ message, severity = 'info', variant = 'filled', timeout = 5000 }) => {
         setAlertMessage(message);
         setAlertSeverity(severity);
         setAlertVariant(variant);
@@ -101,7 +101,6 @@ export const useAppContext = () => {
     }
     return context;
 }
-
 
 const style = {
     alertContainer: { position: 'fixed', left: 2, bottom: 2, width: '100%', padding: 2 }
