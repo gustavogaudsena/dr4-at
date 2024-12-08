@@ -13,7 +13,6 @@ const Dashboard: React.FC = () => {
     const { translate } = useAppContext()
     const navigate = useNavigate()
 
-    const [data, setData] = useState<any[]>([])
     const [countData, setCountData] = useState<any>(null)
     const [baby, setBaby] = useState<{ name?: string, height?: number, weight?: number }>({})
 
@@ -21,7 +20,7 @@ const Dashboard: React.FC = () => {
         const d = await list("list_items");
         const babyProfile = await list("baby");
         if (babyProfile?.[0]) setBaby(babyProfile?.[0])
-        if (d) { setData(d); countList(d) }
+        if (d) { countList(d) }
     }
 
     useEffect(() => {
