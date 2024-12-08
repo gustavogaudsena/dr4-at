@@ -73,7 +73,8 @@ const styles = {
         width: '100%',
         backgroundColor: "var(--gray-op)",
         borderRadius: "60px",
-        marginTop: '1em'
+        marginTop: '1em',
+        cursor: "pointer"
     },
     avatar: {
         backgroundColor: "var(--secondary)",

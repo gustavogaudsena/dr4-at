@@ -47,7 +47,7 @@ const Home: React.FC = () => {
 
     return (
         <>
-            <AppBar title={translate('appName')} firstIcon={{ icon: <Logout />, handleClick: () => { authenticator.logout(); navigate('/signin') } }} secondIcon={{ icon: <Settings />, handleClick: () => navigate('settings') }} />
+            <AppBar title={translate('appName')} firstIcon={{ icon: <Logout />, handleClick: () => { authenticator.logout(); setData([]); setBaby({}); navigate('/signin') } }} secondIcon={{ icon: <Settings />, handleClick: () => navigate('settings') }} />
             <Box sx={styles.box} >
                 <Grid container spacing={1.5} sx={{ xs: 12, ...styles.border }} alignItems={'center'} justifyContent={'center'}>
                     <Grid sx={styles.infoGrid}
